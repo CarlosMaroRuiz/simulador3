@@ -4,7 +4,11 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
-import org.example.models.FactoryWaiter;
+import org.example.bridge.BridgeClients;
+import org.example.factories.FactoryWaiter;
+import org.example.factories.GeneratorClient;
+import org.example.models.QueueClients;
+import org.example.observers.NotifyGenerator;
 import org.example.scene.Background;
 import org.example.settings.SettingsGame;
 
@@ -25,8 +29,9 @@ Colisiones de rango en lo borde
 x= 80 -- 700
 y= 60 -- 490
  */
-public class Main extends GameApplication {
 
+public class Main extends GameApplication {
+   private QueueClients queueClients;
     @Override
     protected void initSettings(GameSettings settings) {
         new SettingsGame(settings);
@@ -37,7 +42,13 @@ public class Main extends GameApplication {
         FXGL.getGameScene().getContentRoot().getChildren().add(0, new Background().getBackground());
             Music backgroundMusic = FXGL.getAssetLoader().loadMusic("restaurant.wav");
             FXGL.getAudioPlayer().loopMusic(backgroundMusic);
+            queueClients = new QueueClients();
+           BridgeClients bridgeClients =  new BridgeClients(queueClients);
+           bridgeClients.makeBridge();
             new FactoryWaiter().createWaiters();
+
+
+
     }
     public static void main(String[] args) {
         launch(args);

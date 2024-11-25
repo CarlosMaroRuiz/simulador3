@@ -22,6 +22,11 @@ public class ClientComponent extends Component implements Movent {
     }
 
     @Override
+    public void onUpdate(double tpf) {
+        getMovent();
+    }
+
+    @Override
     public void setMovimiento(double x, double y) {
         this.toX = x;
         this.toY = y;
@@ -30,5 +35,9 @@ public class ClientComponent extends Component implements Movent {
     @Override
     public void getMovent() {
         entity.setPosition(toX,toY);
+    }
+
+    public double getInitY() {
+        return initY;
     }
 }

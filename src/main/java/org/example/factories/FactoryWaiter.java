@@ -1,8 +1,9 @@
-package org.example.models;
+package org.example.factories;
 
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import org.example.components.WaiterComponent;
+import org.example.models.Waiter;
 
 public class FactoryWaiter {
 
