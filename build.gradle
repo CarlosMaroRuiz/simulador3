@@ -1,0 +1,52 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' } // FXGL está alojado en jitpack.io
+}
+
+dependencies {
+    // Dependencia de FXGL
+    implementation 'com.github.almasb:fxgl:17.2'
+    // Dependencias de JavaFX para todas las plataformas
+    implementation "org.openjfx:javafx-base:17:${getJavaFXPlatform()}"
+    implementation "org.openjfx:javafx-controls:17:${getJavaFXPlatform()}"
+    implementation "org.openjfx:javafx-graphics:17:${getJavaFXPlatform()}"
+    implementation 'javazoom:jlayer:1.0.1'
+    implementation "org.openjfx:javafx-controls:20"
+    implementation "org.openjfx:javafx-media:17:${getJavaFXPlatform()}"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'org.example.Main'
+
+    applicationDefaultJvmArgs = [
+            '--add-modules',
+            'javafx.controls,javafx.graphics',
+            'javafx.controls,javafx.graphics,javafx.media',
+            '-Dprism.order=sw' // Opcional: Forzar software rendering si no hay GPU compatible
+    ]
+}
+
+// Función para detectar la plataforma
+def getJavaFXPlatform() {
+    def os = org.gradle.internal.os.OperatingSystem.current()
+    if (os.isWindows()) {
+        return 'win'
+    } else if (os.isLinux()) {
+        return 'linux'
+    } else if (os.isMacOsX()) {
+        return 'mac'
+    } else {
+        throw new GradleException("Sistema operativo no soportado para JavaFX.")
+    }
+}
