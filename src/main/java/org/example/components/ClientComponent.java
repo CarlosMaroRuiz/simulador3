@@ -1,11 +1,8 @@
 package org.example.components;
-
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.texture.Texture;
-import org.example.interfaces.Movent;
 
-public class ClientComponent extends Component implements Movent {
+public class ClientComponent extends FatherComponent {
     private  double initX;
     private  double initY;
     private double toX;

@@ -1,8 +1,9 @@
-package org.example.models;
+package org.example.threads;
 
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import org.example.components.ChefComponent;
+import org.example.models.Pending;
 import org.example.storages.QueueOrders;
 import org.example.storages.QueueReadyOrders;
 
@@ -21,7 +22,7 @@ public class Chef extends Thread {
         this.queueOrders = QueueOrders.getInstance();
         this.queueReadyOrders = QueueReadyOrders.getInstance();
         this.cookingSound = FXGL.getAssetLoader().loadMusic("cooking.wav");
-        this.pendingCook = null; // Inicialmente no tiene un pedido asignado
+        this.pendingCook = null;
     }
 
     @Override
@@ -113,7 +114,6 @@ public class Chef extends Thread {
         chefComponent.resetPosition();
         chefComponent.setMovent(true);
 
-        // Simular tiempo de movimiento
 
         chefComponent.setMovent(false);
         System.out.println("Chef llegó al mostrador.");

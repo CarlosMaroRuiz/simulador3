@@ -1,10 +1,13 @@
-package org.example.models;
+package org.example.threads;
 
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import org.example.components.WaiterComponent;
+import org.example.models.Pending;
 import org.example.storages.QueueOrders;
 import org.example.storages.QueuePending;
+
+import static org.example.utils.MoveCordinated.moveToCoordinate;
 
 public class Waiter extends Thread {
     private final WaiterComponent waiterComponent;
@@ -28,7 +31,6 @@ public class Waiter extends Thread {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                // Verificar si hay solicitudes en la cola para atender
                 if (!isAttending && queueAttendClients.hasElements()) {
                     attendPending(); // Atender una solicitud pendiente
                 }
@@ -59,9 +61,8 @@ public class Waiter extends Thread {
     }
 
     public void goToTable() throws InterruptedException {
-        moveToCoordinate(targetX, targetY);
+        moveToCoordinate(targetX,targetY,this.waiterComponent);
 
-        // Reproducir audio al llegar a la mesa
         FXGL.getAudioPlayer().playMusic(orderMusic);
 
         Thread.sleep(2000);
@@ -74,7 +75,7 @@ public class Waiter extends Thread {
 
     public void returnToStart() throws InterruptedException {
         System.out.println("Regresando a la posición inicial...");
-        moveToCoordinate(waiterComponent.getInitX(), waiterComponent.getInitY());
+        moveToCoordinate(waiterComponent.getInitX(), waiterComponent.getInitY(),waiterComponent);
 
         // Simular pausa al regresar
         Thread.sleep(2000);
@@ -85,30 +86,6 @@ public class Waiter extends Thread {
         }
 
         System.out.println("Mesero regresó a su posición inicial.");
-    }
-
-    private void moveToCoordinate(double targetX, double targetY) throws InterruptedException {
-        double currentX = waiterComponent.getEntity().getX();
-        double currentY = waiterComponent.getEntity().getY();
-        double speed = 100;
-
-        while (Math.abs(currentX - targetX) > 1 || Math.abs(currentY - targetY) > 1) {
-            double deltaX = targetX - currentX;
-            double deltaY = targetY - currentY;
-
-            double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            double moveX = (deltaX / distance) * speed * 0.016; // 16 ms por frame (aproximadamente 60 FPS)
-            double moveY = (deltaY / distance) * speed * 0.016;
-
-            currentX += moveX;
-            currentY += moveY;
-
-            waiterComponent.setMovimiento(currentX, currentY);
-
-            Thread.sleep(16);
-        }
-
-        waiterComponent.setMovimiento(targetX, targetY);
     }
 
     public synchronized boolean isAttending() {

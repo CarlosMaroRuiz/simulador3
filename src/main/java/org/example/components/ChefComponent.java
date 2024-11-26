@@ -1,17 +1,16 @@
 package org.example.components;
 
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.texture.Texture;
-import org.example.interfaces.Movent;
 
-public class ChefComponent extends Component implements Movent {
+
+public class ChefComponent extends FatherComponent {
     private double initX;
     private double initY;
     private double toX;
     private double toY;
     private boolean isMovent;
-    private double speed = 100; // Velocidad en píxeles por segundo
+    private double speed = 100;
 
     @Override
     public void onAdded() {
@@ -19,8 +18,6 @@ public class ChefComponent extends Component implements Movent {
         entityTexture.setFitWidth(50);
         entityTexture.setFitHeight(100);
         entity.getViewComponent().addChild(entityTexture);
-
-        // Inicializar las coordenadas iniciales
         this.initX = entity.getX();
         this.initY = entity.getY();
         this.isMovent = false;
@@ -41,12 +38,11 @@ public class ChefComponent extends Component implements Movent {
     public void setMovimiento(double x, double y) {
         this.toX = x;
         this.toY = y;
-        this.isMovent = true; // Activar el movimiento
+        this.isMovent = true;
     }
 
     @Override
     public void getMovent() {
-        // No se requiere implementación directa; `onUpdate` lo maneja.
     }
 
     private void updateMovent(double tpf) {

@@ -1,6 +1,7 @@
 package org.example.models;
 
 import org.example.observers.NotifyGenerator;
+import org.example.threads.Client;
 
 import java.util.LinkedList;
 import java.util.Queue;

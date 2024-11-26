@@ -1,12 +1,10 @@
 package org.example.components;
 
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.texture.Texture;
 import org.example.enums.WaiterMovent;
-import org.example.interfaces.Movent;
 
-public class WaiterComponent extends Component implements Movent {
+public class WaiterComponent extends FatherComponent {
 
 
     private WaiterMovent states = WaiterMovent.IDLE;

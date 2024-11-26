@@ -4,7 +4,7 @@ import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import javafx.application.Platform;
 import org.example.components.ClientComponent;
-import org.example.models.Client;
+import org.example.threads.Client;
 import org.example.models.Places;
 import org.example.models.QueueClients;
 

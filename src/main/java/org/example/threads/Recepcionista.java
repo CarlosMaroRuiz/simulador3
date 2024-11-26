@@ -1,4 +1,6 @@
-package org.example.models;
+package org.example.threads;
+
+import org.example.models.Places;
 
 public class Recepcionista extends Thread {
 

@@ -3,7 +3,7 @@ package org.example.factories;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import org.example.components.WaiterComponent;
-import org.example.models.Waiter;
+import org.example.threads.Waiter;
 import org.example.observers.NotifyWaiter;
 
 public class FactoryWaiter {

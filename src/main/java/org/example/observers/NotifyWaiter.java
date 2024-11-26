@@ -1,9 +1,7 @@
 package org.example.observers;
 
-import org.example.models.Client;
-import org.example.models.Cordenads;
 import org.example.models.Pending;
-import org.example.models.Waiter;
+import org.example.threads.Waiter;
 import org.example.storages.QueuePending;
 
 import java.util.ArrayList;

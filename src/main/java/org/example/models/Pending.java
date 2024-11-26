@@ -1,7 +1,9 @@
 package org.example.models;
 
+import org.example.threads.Client;
+
 public class Pending {
-    private  Client client;
+    private Client client;
     private  Cordenads tablePoint;
 
     public Pending (Client client,Cordenads cordenads){

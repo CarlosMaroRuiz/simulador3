@@ -1,32 +1,33 @@
-package org.example.models;
+package org.example.threads;
 
 import com.almasb.fxgl.entity.Entity;
 import javafx.application.Platform;
 import org.example.components.ClientComponent;
+import org.example.models.Cordenads;
+import org.example.models.Pending;
+import org.example.models.Places;
 import org.example.observers.NotifyWaiter;
+import static org.example.utils.MoveCordinated.moveToCoordinate;
 
 public class Client extends Thread {
     private final ClientComponent clientComponent;
-    private volatile boolean isWaitingForTable; // Indica si el cliente está esperando por una mesa
-    private Cordenads cordenads; // Coordenadas de la mesa asignada
+    private volatile boolean isWaitingForTable;
+    private Cordenads cordenads;
     private int idMesa; // ID de la mesa asignada
     private final Places places; // Referencia al gestor de mesas
     private volatile boolean isAttending; // Indica si el cliente está siendo atendido
 
     public Client(ClientComponent clientComponent, Places places) {
         this.clientComponent = clientComponent;
-        this.isWaitingForTable = true; // Inicialmente, el cliente espera una mesa
+        this.isWaitingForTable = true;
         this.places = places;
-        this.isAttending = false; // No está siendo atendido al inicio
+        this.isAttending = false;
     }
 
     @Override
     public void run() {
         try {
-            // Cliente entra al restaurante
             entrar();
-
-            // Espera a que se le asigne una mesa
             synchronized (this) {
                 while (isWaitingForTable) {
                     System.out.println("Cliente esperando una mesa...");
@@ -34,11 +35,10 @@ public class Client extends Thread {
                 }
             }
 
-            // Se mueve a la mesa asignada
-            moveToCoordinate(this.cordenads.getX(), this.cordenads.getY());
+            moveToCoordinate(this.cordenads.getX(), this.cordenads.getY(),this.clientComponent);
             notifyMesero(); // Notifica al mesero que necesita atención
 
-            // Espera a ser atendido
+
             synchronized (this) {
                 while (!isAttending) {
                     System.out.println("Cliente esperando ser atendido...");
@@ -46,7 +46,6 @@ public class Client extends Thread {
                 }
             }
 
-            // Sale del escenario y libera la mesa
             removeFromScene();
             places.liberarMesa(idMesa);
 
@@ -60,38 +59,15 @@ public class Client extends Thread {
         this.cordenads = new Cordenads(x, y);
         this.idMesa = idMesa;
         isWaitingForTable = false;
-        notify(); // Notifica al cliente que tiene una mesa asignada
+        notify();
         System.out.println("Cliente asignado a una mesa en posición: X=" + x + ", Y=" + y);
     }
 
     private void entrar() throws InterruptedException {
         System.out.println("Cliente entrando al restaurante...");
-        moveToCoordinate(600, clientComponent.getInitY());
+        moveToCoordinate(600, clientComponent.getInitY(),this.clientComponent);
     }
 
-    private void moveToCoordinate(double targetX, double targetY) throws InterruptedException {
-        double currentX = clientComponent.getEntity().getX();
-        double currentY = clientComponent.getEntity().getY();
-        double speed = 100;
-
-        while (Math.abs(currentX - targetX) > 1 || Math.abs(currentY - targetY) > 1) {
-            double deltaX = targetX - currentX;
-            double deltaY = targetY - currentY;
-
-            double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            double moveX = (deltaX / distance) * speed * 0.016; // Movimiento por frame
-            double moveY = (deltaY / distance) * speed * 0.016;
-
-            currentX += moveX;
-            currentY += moveY;
-            clientComponent.setMovimiento(currentX, currentY);
-
-            Thread.sleep(16);
-        }
-
-        clientComponent.setMovimiento(targetX, targetY);
-        System.out.println("Cliente llegó a la posición: X=" + targetX + ", Y=" + targetY);
-    }
 
     private void removeFromScene() {
         Platform.runLater(() -> {

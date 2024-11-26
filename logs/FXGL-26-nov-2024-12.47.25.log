@@ -1,0 +1,384 @@
+12:44:19.915 [main                     ] DEBUG Logger               - Configured Logger
+12:44:19.960 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Untitled
+Version: 0.0
+Width: 800
+Height: 600
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class com.almasb.fxgl.app.scene.SceneFactory
+
+12:44:20.508 [JavaFX Application Thread] DEBUG FXGLApplication      - Initializing FXGL
+12:44:20.514 [JavaFX Application Thread] INFO  Engine               - FXGL-17.2 (20.08.2022 16.50) on LINUX (J:21.0.5 FX:20)
+12:44:20.514 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Ubuntu
+12:44:20.515 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Linux version 6.8.0-49-generic
+12:44:20.515 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+12:44:20.515 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+12:44:20.515 [JavaFX Application Thread] INFO  Engine               -       Ask questions and discuss at: https://github.com/AlmasB/FXGL/discussions
+12:44:20.516 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+12:44:20.658 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Creating a JavaFX scene
+12:44:20.820 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Target settings size: 800.0 x 600.0
+12:44:20.820 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled scene size:    800.0 x 600.0
+12:44:20.821 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+12:44:20.822 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Set initial scene to FXGLStartupScene
+12:44:20.826 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Opening main window
+12:44:20.884 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Window border size: (2.0, 29.0)
+12:44:20.885 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled size: 800.0 x 600.0
+12:44:20.885 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+12:44:20.885 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scene size: 800.0 x 600.0
+12:44:20.886 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Stage size: 802.0 x 629.0
+12:44:20.897 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+12:44:20.963 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - User app class for loading assets: class org.example.Main
+12:44:20.964 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Applying CSS: fxgl_dark.css
+12:44:20.965 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/css/fxgl_dark.css
+12:44:21.021 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Initializing application scenes
+12:44:21.075 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+12:44:21.142 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50,0
+12:44:21.142 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Using strategy: BRUTE_FORCE
+12:44:21.147 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 800x600
+12:44:21.161 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+12:44:21.179 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+12:44:21.193 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/particles/smoke.png
+12:44:21.341 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/particles/trace_horizontal.png
+12:44:21.375 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Application scenes initialized
+12:44:21.390 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+12:44:21.394 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: /home/cato/IdeaProjects/simulador3/system/fxgl.bundle
+12:44:21.406 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+12:44:21.406 [FXGL Background Thread 1 ] DEBUG UpdaterService       - Checking for updates
+12:44:21.411 [FXGL Background Thread 4 ] DEBUG FXGLApplication      - Loading fonts
+12:44:21.412 [FXGL Background Thread 1 ] DEBUG FXGLApplication      - Loading default localization
+12:44:21.412 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/VarelaRound-Regular.ttf
+12:44:21.412 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/languages/english.lang
+12:44:21.423 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/Abel-Regular.ttf
+12:44:21.425 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/TerminalLandMono-Regular.otf
+12:44:21.427 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/ui/fonts/Courier-Prime.ttf
+12:44:21.432 [JavaFX Application Thread] DEBUG FXGLApplication      - Registering font factories with UI factory
+12:44:21.432 [FXGL Background Thread 1 ] INFO  FXGLApplication      - FXGL initialization took: 0,536 sec
+12:44:21.434 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/fxgl_icon.png
+12:44:21.467 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:/home/cato/.gradle/caches/modules-2/files-2.1/com.github.almasb/fxgl/17.2/35db6ae960eec2dcfd19262d3b7f9c42f0e95bc3/fxgl-17.2.jar!/fxglassets/textures/fxgl_default_cursor.png
+12:44:21.480 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - CTRL+8
+12:44:21.480 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+12:44:21.481 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+12:44:21.481 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Toggle Debug Camera - CTRL+7
+12:44:21.484 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+12:44:21.484 [JavaFX Application Thread] DEBUG LoopRunner           - Initializing JavaFX AnimationTimerLoop
+12:44:21.485 [JavaFX Application Thread] DEBUG GameApplicationServi - Starting new game
+12:44:21.486 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:44:21.498 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLStartupScene and adding to FXGLLoadingScene
+12:44:21.499 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLStartupScene -> FXGLLoadingScene
+12:44:21.499 [JavaFX Application Thread] DEBUG GameApplicationServi - Clearing previous game
+12:44:21.499 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+12:44:21.499 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+12:44:21.499 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+12:44:21.501 [FXGL Background Thread 1 ] DEBUG FXGLApplication      - Initializing game
+12:44:21.503 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/textures/lugar.png
+12:44:21.570 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/music/restaurant.wav
+12:44:21.730 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@34369c4f
+12:44:21.747 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/textures/mesero_frontal.png
+12:44:21.754 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/music/order.wav
+12:44:21.816 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/textures/chef.png
+12:44:21.823 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/music/cooking.wav
+12:44:21.835 [FXGL Background Thread 1 ] INFO  FXGLApplication      - Game initialization took: 0,334 sec
+12:44:21.836 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:44:21.850 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLLoadingScene and adding to GameScene
+12:44:21.850 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLLoadingScene -> GameScene
+12:44:22.423 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/textures/client.png
+12:44:22.473 [FXGL Background Thread 2 ] INFO  UpdaterService       - Your current version:  17.2
+12:44:22.474 [FXGL Background Thread 2 ] INFO  UpdaterService       - Latest stable version: 21.1
+12:44:24.409 [FXGL Background Thread 3 ] DEBUG Engine               - Logging environment variables
+12:44:24.410 [FXGL Background Thread 3 ] DEBUG Engine               - achievements: []
+12:44:24.410 [FXGL Background Thread 3 ] DEBUG Engine               - actualHeight: 571.0
+12:44:24.410 [FXGL Background Thread 3 ] DEBUG Engine               - actualHeightProperty: ReadOnlyDoubleProperty [value: 608.0]
+12:44:24.410 [FXGL Background Thread 3 ] DEBUG Engine               - actualWidth: 798.0
+12:44:24.410 [FXGL Background Thread 3 ] DEBUG Engine               - actualWidthProperty: ReadOnlyDoubleProperty [value: 798.0]
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - appIcon: fxgl_icon.png
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - applicationMode: DEVELOPER
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - cSSList: [fxgl_dark.css]
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - collisionDetectionStrategy: BRUTE_FORCE
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - configClass: Optional.empty
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - credits: []
+12:44:24.411 [FXGL Background Thread 3 ] DEBUG Engine               - defaultCursor: CursorInfo(imageName=fxgl_default_cursor.png, hotspotX=7.0, hotspotY=6.0)
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - devEnableDebugCameraProperty: BooleanProperty [value: false]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - enabledMenuItems: []
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - engineServices: [class com.almasb.fxgl.app.services.FXGLAssetLoaderService, class com.almasb.fxgl.app.FXGLApplication$GameApplicationService, class com.almasb.fxgl.app.services.FXGLDialogService, class com.almasb.fxgl.app.services.IOTaskExecutorService, class com.almasb.fxgl.io.FileSystemService, class com.almasb.fxgl.localization.LocalizationService, class com.almasb.fxgl.app.services.SystemBundleService, class com.almasb.fxgl.profile.SaveLoadService, class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider, class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider, class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementService, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService, class com.almasb.fxgl.net.NetService, class com.almasb.fxgl.app.services.UpdaterService, class com.almasb.fxgl.dev.DevService]
+12:44:24.412 [FXGL Background Thread 3 ] DEBUG Engine               - fontGame: Abel-Regular.ttf
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - fontMono: TerminalLandMono-Regular.otf
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - fontText: Courier-Prime.ttf
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - gameDifficulty: MEDIUM
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - gameDifficultyProperty: ObjectProperty [value: MEDIUM]
+12:44:24.413 [FXGL Background Thread 3 ] DEBUG Engine               - globalMusicVolume: 0.5
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - globalSoundVolume: 0.5
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - height: 600
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - is3D: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isAndroid: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isBrowser: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isClickFeedbackEnabled: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isCloseConfirmation: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isDesktop: true
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isDeveloperMenuEnabled: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isEmbedded: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isEntityPreloadEnabled: true
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isExperimentalTiledLargeMap: false
+12:44:24.414 [FXGL Background Thread 3 ] DEBUG Engine               - isFileSystemWriteAllowed: true
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isFullScreenAllowed: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isFullScreenFromStart: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isGameMenuEnabled: true
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isIOS: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isIntroEnabled: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isLinux: true
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isMac: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isMainMenuEnabled: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isManualResizeEnabled: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isMobile: false
+12:44:24.415 [FXGL Background Thread 3 ] DEBUG Engine               - isNative: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isPauseMusicWhenMinimized: true
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isPreserveResizeRatio: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isProfilingEnabled: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isScaleAffectedOnResize: true
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isSingleStep: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isUserProfileEnabled: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - isWindows: false
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - language: ObjectProperty [value: ENGLISH]
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - menuKey: ESCAPE
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - mouseSensitivity: 0.2
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - pixelsPerMeter: 50.0
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - platform: LINUX
+12:44:24.416 [FXGL Background Thread 3 ] DEBUG Engine               - prefHeightProperty: ReadOnlyDoubleProperty [value: 600.0]
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - prefWidthProperty: ReadOnlyDoubleProperty [value: 800.0]
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - profileDir: profiles/
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - profileName: StringProperty [value: DEFAULT]
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - randomSeed: -1
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=LINUX, version=17.2, build=20.08.2022 16.50)
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - saveFileExt: sav
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - scaledHeightProp$fxgl: DoubleProperty [bound, value: 608.0]
+12:44:24.417 [FXGL Background Thread 3 ] DEBUG Engine               - scaledWidthProp$fxgl: DoubleProperty [bound, value: 798.0]
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - sceneFactory: com.almasb.fxgl.app.scene.SceneFactory@7c202ed9
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - secondsIn24h: 60
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuBack: menu/back.wav
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuPress: menu/press.wav
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - soundMenuSelect: menu/select.wav
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - soundNotification: core/notification.wav
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - stageStyle: DECORATED
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - supportedLanguages: [ENGLISH, FRENCH, GERMAN, HUNGARIAN, RUSSIAN]
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - ticksPerSecond: -1
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - title: Untitled
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/release/README.md
+12:44:24.418 [FXGL Background Thread 3 ] DEBUG Engine               - userAppClass: class org.example.Main
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - version: 0.0
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - versionCheckDays: 7
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - width: 800
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - Logging services
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.FXGLAssetLoaderService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.FXGLApplication$GameApplicationService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.FXGLDialogService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.IOTaskExecutorService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.io.FileSystemService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.localization.LocalizationService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.SystemBundleService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.profile.SaveLoadService
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.audio.AudioPlayer
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+12:44:24.419 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.achievement.AchievementService
+12:44:24.420 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.cutscene.CutsceneService
+12:44:24.420 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.minigames.MiniGameService
+12:44:24.420 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.net.NetService
+12:44:24.420 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.app.services.UpdaterService
+12:44:24.420 [FXGL Background Thread 3 ] DEBUG Engine               - class com.almasb.fxgl.dev.DevService
+12:44:29.942 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:31.943 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:32.048 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:34.049 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:39.914 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:40.128 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:40.338 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:41.539 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:42.339 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:43.539 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:44.915 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:44.937 [Thread-102               ] DEBUG FXGLAssetLoaderServi - Loading from file system: file:/home/cato/IdeaProjects/simulador3/build/resources/main/assets/music/bell.wav
+12:44:44.947 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:44:45.128 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:45.129 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:44:48.492 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:50.344 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:51.072 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:51.726 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:44:52.345 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:53.493 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:53.512 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:44:53.726 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:44:56.072 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:44:56.073 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:44:59.580 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:00.136 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:00.346 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:01.626 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:02.347 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:03.627 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:04.581 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:04.602 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:05.136 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:05.137 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:08.495 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:10.314 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:11.525 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:11.574 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:12.315 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:13.495 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:13.518 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:13.525 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:16.575 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:16.575 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:19.378 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:20.064 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:20.275 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:21.038 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:22.276 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:23.039 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:24.378 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:24.396 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:25.065 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:25.066 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:28.415 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:30.553 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:30.599 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:30.640 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:32.554 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:32.640 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:33.416 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:33.441 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:35.600 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:35.600 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:38.440 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:40.067 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:40.765 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:40.974 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:42.068 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:42.974 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:43.440 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:43.466 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:45.765 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:45.766 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:49.085 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:49.581 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:49.629 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:50.936 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:45:51.581 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:52.936 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:45:54.085 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:54.111 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:54.629 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:54.630 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:45:57.467 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:45:59.511 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:00.690 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:01.512 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:02.403 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:02.468 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:02.495 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:04.403 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:05.690 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:05.691 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:09.459 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:10.546 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:10.691 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:11.087 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:12.692 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:13.087 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:14.460 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:14.484 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:15.546 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:15.547 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:18.779 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:20.615 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:20.632 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:21.232 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:22.632 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:23.232 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:23.780 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:23.806 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:25.615 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:25.615 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:29.150 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:30.429 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:30.574 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:31.197 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:32.574 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:33.197 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:34.150 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:34.175 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:35.430 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:35.430 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:38.662 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:40.481 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:41.142 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:42.259 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:42.482 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:43.663 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:43.690 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:44.259 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:46.142 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:46.143 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:50.177 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:50.235 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:50.382 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:51.836 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:46:52.383 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:53.837 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:46:55.178 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:55.210 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:55.236 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:46:55.236 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:46:58.460 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:00.685 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:01.398 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:02.216 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:02.685 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:03.461 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:03.488 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:47:04.216 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:06.398 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:06.399 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:47:10.135 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:10.842 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:10.987 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:11.761 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:12.988 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:13.761 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:15.135 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:15.158 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:47:15.843 [Thread-126               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:15.843 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:47:19.069 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:20.916 [Thread-82                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:21.287 [Thread-126               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:21.500 [Thread-68                ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@10309832
+12:47:22.916 [Thread-82                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:23.500 [Thread-68                ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@10309832
+12:47:24.070 [Thread-102               ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4ed39af6
+12:47:24.097 [Thread-102               ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@5cdf4e72
+12:47:25.366 [JavaFX Application Thread] DEBUG FXGLApplication      - Exiting FXGL
+12:47:25.366 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+12:47:25.366 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+12:47:25.371 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: /home/cato/IdeaProjects/simulador3/system/fxgl.bundle
+12:47:25.377 [JavaFX Application Thread] DEBUG Async                - Shutting down background threads
+12:47:25.377 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Closing main window
+12:47:25.380 [JavaFX Application Thread] DEBUG Logger               - Closing Logger

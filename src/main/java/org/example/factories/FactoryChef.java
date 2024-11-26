@@ -3,7 +3,7 @@ package org.example.factories;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import org.example.components.ChefComponent;
-import org.example.models.Chef;
+import org.example.threads.Chef;
 
 public class FactoryChef {
 
@@ -14,16 +14,15 @@ public class FactoryChef {
         for (byte i = 0; i < 2; i++) {
             ChefComponent chefComponent = new ChefComponent();
 
-            // Crear y posicionar el chef
-            double chefX = startX + (i * spacing); // Calcular la posición en X
-            double chefY = 380; // Posición fija en Y
+
+            double chefX = startX + (i * spacing);
+            double chefY = 380;
 
             Entity chefBuild = FXGL.entityBuilder()
                     .at(chefX, chefY)
                     .with(chefComponent)
                     .buildAndAttach();
 
-            // Log para depuración
             System.out.println("Chef creado en posición: X=" + chefX + ", Y=" + chefY);
 
             Chef chef = new Chef(chefComponent);
