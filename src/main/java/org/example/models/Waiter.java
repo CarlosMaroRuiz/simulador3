@@ -3,49 +3,63 @@ package org.example.models;
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import org.example.components.WaiterComponent;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import org.example.storages.QueueOrders;
+import org.example.storages.QueuePending;
 
 public class Waiter extends Thread {
-    private final List<Cordenads> coordinates = new ArrayList<>();
     private final WaiterComponent waiterComponent;
-    private final Random random = new Random(); // Para seleccionar lugares aleatorios
-    private final Music orderMusic; // Cargar el audio una sola vez
+    private final Music orderMusic;
+    private double targetX;
+    private double targetY;
+    private volatile boolean isAttending;
+    private final QueuePending queueAttendClients;
+    private final QueueOrders queueOrder;
+    private Pending sendPending; // Para enviar pedido a la cocina
 
     public Waiter(WaiterComponent waiterComponent) {
         this.waiterComponent = waiterComponent;
-
-        // Coordenadas para las mesas
-        coordinates.add(new Cordenads(194.34784556330453, 160.34784556330453));
-        coordinates.add(new Cordenads(294.34784556330453, 285));
-        coordinates.add(new Cordenads(204.34784556330453, 289));
-
-        // Cargar el audio una vez al crear el objeto
+        this.isAttending = false;
+        this.queueAttendClients = QueuePending.getInstance();
+        this.queueOrder = QueueOrders.getInstance();
         orderMusic = FXGL.getAssetLoader().loadMusic("order.wav");
     }
 
     @Override
     public void run() {
-        while (true) {
-            waiterComponent.setStates(1); // Cambiar a estado WALKING
+        while (!Thread.currentThread().isInterrupted()) {
             try {
-                int randomIndex = random.nextInt(coordinates.size());
-                goToTable(randomIndex); // Ir a un lugar aleatorio
-                returnToStart();       // Regresar a la posición inicial
+                // Verificar si hay solicitudes en la cola para atender
+                if (!isAttending && queueAttendClients.hasElements()) {
+                    attendPending(); // Atender una solicitud pendiente
+                }
+
+                if (isAttending) {
+                    goToTable(); // Ir a la mesa
+                    returnToStart(); // Regresar a la posición inicial
+                    sendPendingToKitchen(); // Enviar pendiente a la cocina
+                }
+
+                Thread.sleep(100); // Reducir uso de CPU en caso de inactividad
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                System.out.println("Mesero interrumpido.");
+                Thread.currentThread().interrupt();
             }
         }
     }
 
-    public void goToTable(int numTable) throws InterruptedException {
-        Cordenads selectedCord = coordinates.get(numTable);
-        System.out.println("Yendo a la mesa en: X=" + selectedCord.getX() + ", Y=" + selectedCord.getY());
+    public synchronized void callForAttend(Pending pending) {
+        if (!isAttending) {
+            this.targetX = pending.getTablePoint().getX();
+            this.targetY = pending.getTablePoint().getY();
+            this.isAttending = true;
+            sendPending = pending;
+            waiterComponent.setStates(1);
+            notify();
+        }
+    }
 
-        // Mover al camarero a la coordenada seleccionada
-        moveToCoordinate(selectedCord.getX(), selectedCord.getY());
+    public void goToTable() throws InterruptedException {
+        moveToCoordinate(targetX, targetY);
 
         // Reproducir audio al llegar a la mesa
         FXGL.getAudioPlayer().playMusic(orderMusic);
@@ -55,45 +69,66 @@ public class Waiter extends Thread {
 
         // Detener la música al terminar la interacción
         FXGL.getAudioPlayer().stopMusic(orderMusic);
+
+        System.out.println("Mesero atendió la mesa en posición: X=" + targetX + ", Y=" + targetY);
     }
 
     public void returnToStart() throws InterruptedException {
         System.out.println("Regresando a la posición inicial...");
         moveToCoordinate(waiterComponent.getInitX(), waiterComponent.getInitY());
 
-        // Detenerse un momento al regresar
+        // Simular pausa al regresar
         Thread.sleep(2000);
 
-        // Cambiar al estado IDLE
-        waiterComponent.setStates(0);
+        synchronized (this) {
+            isAttending = false;
+            waiterComponent.setStates(0);
+        }
+
+        System.out.println("Mesero regresó a su posición inicial.");
     }
 
     private void moveToCoordinate(double targetX, double targetY) throws InterruptedException {
         double currentX = waiterComponent.getEntity().getX();
         double currentY = waiterComponent.getEntity().getY();
-        double speed = 100; // Velocidad en píxeles por segundo
+        double speed = 100;
 
         while (Math.abs(currentX - targetX) > 1 || Math.abs(currentY - targetY) > 1) {
             double deltaX = targetX - currentX;
             double deltaY = targetY - currentY;
 
-            // Calcular dirección normalizada
             double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
             double moveX = (deltaX / distance) * speed * 0.016; // 16 ms por frame (aproximadamente 60 FPS)
             double moveY = (deltaY / distance) * speed * 0.016;
 
-            // Actualizar posición actual
             currentX += moveX;
             currentY += moveY;
 
-            // Aplicar posición al componente
             waiterComponent.setMovimiento(currentX, currentY);
 
-            // Pausar para simular el tiempo entre frames
             Thread.sleep(16);
         }
 
-        // Ajustar a la posición final exacta
         waiterComponent.setMovimiento(targetX, targetY);
+    }
+
+    public synchronized boolean isAttending() {
+        return this.isAttending;
+    }
+
+    private void attendPending() {
+        Pending pending = queueAttendClients.desencolar();
+        if (pending != null) {
+            callForAttend(pending);
+            System.out.println("Mesero atendiendo solicitud de la cola: X=" + pending.getTablePoint().getX() + ", Y=" + pending.getTablePoint().getY());
+        }
+    }
+
+    private void sendPendingToKitchen() {
+        if (sendPending != null) {
+            queueOrder.encolar(sendPending);
+            System.out.println("Pedido enviado a la cocina: " + sendPending);
+            sendPending = null;
+        }
     }
 }

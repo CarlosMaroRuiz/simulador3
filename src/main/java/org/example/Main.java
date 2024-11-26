@@ -6,9 +6,8 @@ import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import org.example.bridge.BridgeClients;
 import org.example.factories.FactoryWaiter;
-import org.example.factories.GeneratorClient;
+
 import org.example.models.QueueClients;
-import org.example.observers.NotifyGenerator;
 import org.example.scene.Background;
 import org.example.settings.SettingsGame;
 

@@ -3,6 +3,7 @@ package org.example.models;
 import com.almasb.fxgl.entity.Entity;
 import javafx.application.Platform;
 import org.example.components.ClientComponent;
+import org.example.observers.NotifyWaiter;
 
 public class Client extends Thread {
     private final ClientComponent clientComponent;
@@ -10,11 +11,13 @@ public class Client extends Thread {
     private Cordenads cordenads;
     private int idMesa;
     private final Places places;
+    private volatile boolean isAttending;
 
     public Client(ClientComponent clientComponent, Places places) {
         this.clientComponent = clientComponent;
         this.isWaitingForTable = true;
         this.places = places;
+        this.isAttending = false;
     }
 
     @Override
@@ -24,13 +27,23 @@ public class Client extends Thread {
 
             synchronized (this) {
                 while (isWaitingForTable) {
+                    System.out.println("Cliente esperando una mesa...");
                     wait(); // Espera a que una mesa esté disponible
                 }
-                moveToCoordinate(this.cordenads.getX(), this.cordenads.getY());
-                notifyMesero();
-                removeFromScene();
-                places.liberarMesa(idMesa);
             }
+
+            moveToCoordinate(this.cordenads.getX(), this.cordenads.getY());
+            notifyMesero();
+
+            synchronized (this) {
+                while (!isAttending) {
+                    System.out.println("Cliente esperando ser atendido...");
+                    wait(); // Espera a ser atendido
+                }
+            }
+
+            removeFromScene();
+            places.liberarMesa(idMesa);
 
         } catch (InterruptedException e) {
             System.out.println("Cliente interrumpido durante la espera.");
@@ -86,6 +99,19 @@ public class Client extends Thread {
     }
 
     private void notifyMesero() {
-        System.out.println("Cliente llamando al mesero.");
+        if (cordenads == null) {
+            System.err.println("Error: Las coordenadas de la mesa son nulas.");
+            return;
+        }
+        NotifyWaiter notifyWaiter = NotifyWaiter.getInstance();
+        System.out.println("llamando al mesero");
+
+        notifyWaiter.notifyWaiter(new Pending(this,cordenads));
+    }
+
+    public synchronized void attend() {
+        this.isAttending = true;
+        System.out.println("Cliente siendo atendido...");
+        notify(); // Notificar al cliente que ha sido atendido
     }
 }

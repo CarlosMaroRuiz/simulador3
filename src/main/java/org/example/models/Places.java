@@ -7,10 +7,21 @@ import java.util.Arrays;
 public class Places {
     private final Client[] mesasDisponibles = new Client[5];
     private final QueueClients queueClients;
+    private final Cordenads[] ubiTable; // Declaración del arreglo de ubicaciones
     private NotifyGenerator notifyGenerator;
+
     public Places(QueueClients queueClients) {
         this.queueClients = queueClients;
         Arrays.fill(mesasDisponibles, null);
+
+        // Inicialización del arreglo de ubicaciones de mesas
+        ubiTable = new Cordenads[] {
+                new Cordenads(152, 100),
+                new Cordenads(152, 240),
+                new Cordenads(320, 240),
+                new Cordenads(152, 345),
+                new Cordenads(320, 345)
+        };
     }
 
     public synchronized void placeClient() {
@@ -20,21 +31,24 @@ public class Places {
 
             if (mesaDisponible != -1) {
                 mesasDisponibles[mesaDisponible] = client;
-                double x = 100 + mesaDisponible * 50;
-                double y = 200;
-                client.assignTable(x, y, mesaDisponible);
-                System.out.println("Cliente asignado a la mesa " + (mesaDisponible + 1) + " en posición X=" + x + ", Y=" + y);
+                Cordenads ubicacionMesa = ubiTable[mesaDisponible]; // Obtener las coordenadas de la mesa
+                client.assignTable(ubicacionMesa.getX(), ubicacionMesa.getY(), mesaDisponible);
+                System.out.println("Cliente asignado a la mesa " + (mesaDisponible + 1) +
+                        " en posición X=" + ubicacionMesa.getX() + ", Y=" + ubicacionMesa.getY());
             }
         } else {
             System.out.println("No hay clientes en la cola.");
-            notifyGenerator.continueGenerated();
+            if (notifyGenerator != null) {
+                notifyGenerator.continueGenerated(); // Reanudar generación si no hay clientes
+            }
         }
     }
 
     public synchronized void liberarMesa(int numeroMesa) {
         if (numeroMesa >= 0 && numeroMesa < mesasDisponibles.length) {
             if (mesasDisponibles[numeroMesa] != null) {
-                System.out.println("Liberando mesa " + (numeroMesa + 1) + " de Cliente ID: " + mesasDisponibles[numeroMesa].getId());
+                System.out.println("Liberando mesa " + (numeroMesa + 1) +
+                        " de Cliente ID: " + mesasDisponibles[numeroMesa].getId());
                 mesasDisponibles[numeroMesa] = null;
                 notifyAll(); // Notificar a los clientes en espera
             } else {
@@ -63,7 +77,7 @@ public class Places {
         return -1;
     }
 
-    public void addNotify(NotifyGenerator notifyGenerator){
+    public void addNotify(NotifyGenerator notifyGenerator) {
         this.notifyGenerator = notifyGenerator;
     }
 }

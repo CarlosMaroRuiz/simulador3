@@ -49,6 +49,9 @@ public class WaiterComponent extends Component implements Movent {
                 case 1:this.states = WaiterMovent.WALKING;break;
             }
     }
+    public WaiterMovent getStates(){
+        return states;
+    }
     public void setMovimiento(double x,double y){
           this.toX = x;
           this.toY = y;
