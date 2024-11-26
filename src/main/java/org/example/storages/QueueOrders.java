@@ -1,46 +1,48 @@
 package org.example.storages;
-
 import org.example.models.Pending;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class QueueOrders {
-    private final Queue<Pending> ordersPending;
+    private final BlockingQueue<Pending> orders;
     private static QueueOrders instance;
 
     private QueueOrders() {
-        this.ordersPending = new LinkedList<>();
+        this.orders = new LinkedBlockingQueue<>(); // Manejo automático de concurrencia
     }
 
-    public static synchronized QueueOrders getInstance() {
+    public static QueueOrders getInstance() {
         if (instance == null) {
-            instance = new QueueOrders();
+            synchronized (QueueOrders.class) {
+                if (instance == null) {
+                    instance = new QueueOrders();
+                }
+            }
         }
         return instance;
     }
 
-    public synchronized void encolar(Pending pending) {
-        if (pending != null) {
-            ordersPending.add(pending);
-            System.out.println("Pedido encolado: " + pending);
-        } else {
-            System.err.println("Error: Pedido nulo no puede ser encolado.");
+    public void encolar(Pending order) {
+        try {
+            orders.put(order); // Bloquea si la cola está llena
+            System.out.println("Pedido encolado: " + order);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Interrumpido al encolar pedido.");
         }
     }
 
-    public synchronized Pending desencolar() {
-        if (!ordersPending.isEmpty()) {
-            Pending pending = ordersPending.poll();
-            System.out.println("Pedido desencolado: " + pending);
-            return pending;
-        } else {
-            System.out.println("No hay pedidos en cola.");
+    public Pending desencolar() {
+        try {
+            return orders.take(); // Bloquea si la cola está vacía
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Interrumpido al desencolar pedido.");
             return null;
         }
     }
 
-    public synchronized boolean hasElements() {
-        return !ordersPending.isEmpty();
+    public boolean hasElements() {
+        return !orders.isEmpty();
     }
 }

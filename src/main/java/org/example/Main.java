@@ -5,6 +5,7 @@ import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import org.example.bridge.BridgeClients;
+import org.example.factories.FactoryChef;
 import org.example.factories.FactoryWaiter;
 
 import org.example.models.QueueClients;
@@ -42,9 +43,14 @@ public class Main extends GameApplication {
             Music backgroundMusic = FXGL.getAssetLoader().loadMusic("restaurant.wav");
             FXGL.getAudioPlayer().loopMusic(backgroundMusic);
             queueClients = new QueueClients();
-           BridgeClients bridgeClients =  new BridgeClients(queueClients);
+
+
+        BridgeClients bridgeClients =  new BridgeClients(queueClients);
            bridgeClients.makeBridge();
-            new FactoryWaiter().createWaiters();
+
+        new FactoryWaiter().createWaiters();
+        new FactoryChef().createChefs();
+
 
 
 

@@ -14,7 +14,7 @@ public class Waiter extends Thread {
     private volatile boolean isAttending;
     private final QueuePending queueAttendClients;
     private final QueueOrders queueOrder;
-    private Pending sendPending; // Para enviar pedido a la cocina
+    private Pending sendPending;
 
     public Waiter(WaiterComponent waiterComponent) {
         this.waiterComponent = waiterComponent;
@@ -34,12 +34,12 @@ public class Waiter extends Thread {
                 }
 
                 if (isAttending) {
-                    goToTable(); // Ir a la mesa
-                    returnToStart(); // Regresar a la posición inicial
-                    sendPendingToKitchen(); // Enviar pendiente a la cocina
+                    goToTable();
+                    returnToStart();
+                    sendPendingToKitchen();
                 }
 
-                Thread.sleep(100); // Reducir uso de CPU en caso de inactividad
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println("Mesero interrumpido.");
                 Thread.currentThread().interrupt();
@@ -64,10 +64,9 @@ public class Waiter extends Thread {
         // Reproducir audio al llegar a la mesa
         FXGL.getAudioPlayer().playMusic(orderMusic);
 
-        // Simular una pausa en la mesa
         Thread.sleep(2000);
 
-        // Detener la música al terminar la interacción
+
         FXGL.getAudioPlayer().stopMusic(orderMusic);
 
         System.out.println("Mesero atendió la mesa en posición: X=" + targetX + ", Y=" + targetY);

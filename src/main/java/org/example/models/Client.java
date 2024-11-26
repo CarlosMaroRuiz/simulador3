@@ -7,41 +7,46 @@ import org.example.observers.NotifyWaiter;
 
 public class Client extends Thread {
     private final ClientComponent clientComponent;
-    private volatile boolean isWaitingForTable;
-    private Cordenads cordenads;
-    private int idMesa;
-    private final Places places;
-    private volatile boolean isAttending;
+    private volatile boolean isWaitingForTable; // Indica si el cliente está esperando por una mesa
+    private Cordenads cordenads; // Coordenadas de la mesa asignada
+    private int idMesa; // ID de la mesa asignada
+    private final Places places; // Referencia al gestor de mesas
+    private volatile boolean isAttending; // Indica si el cliente está siendo atendido
 
     public Client(ClientComponent clientComponent, Places places) {
         this.clientComponent = clientComponent;
-        this.isWaitingForTable = true;
+        this.isWaitingForTable = true; // Inicialmente, el cliente espera una mesa
         this.places = places;
-        this.isAttending = false;
+        this.isAttending = false; // No está siendo atendido al inicio
     }
 
     @Override
     public void run() {
         try {
+            // Cliente entra al restaurante
             entrar();
 
+            // Espera a que se le asigne una mesa
             synchronized (this) {
                 while (isWaitingForTable) {
                     System.out.println("Cliente esperando una mesa...");
-                    wait(); // Espera a que una mesa esté disponible
+                    wait();
                 }
             }
 
+            // Se mueve a la mesa asignada
             moveToCoordinate(this.cordenads.getX(), this.cordenads.getY());
-            notifyMesero();
+            notifyMesero(); // Notifica al mesero que necesita atención
 
+            // Espera a ser atendido
             synchronized (this) {
                 while (!isAttending) {
                     System.out.println("Cliente esperando ser atendido...");
-                    wait(); // Espera a ser atendido
+                    wait();
                 }
             }
 
+            // Sale del escenario y libera la mesa
             removeFromScene();
             places.liberarMesa(idMesa);
 
@@ -55,7 +60,7 @@ public class Client extends Thread {
         this.cordenads = new Cordenads(x, y);
         this.idMesa = idMesa;
         isWaitingForTable = false;
-        notify(); // Notificar al cliente que tiene una mesa asignada
+        notify(); // Notifica al cliente que tiene una mesa asignada
         System.out.println("Cliente asignado a una mesa en posición: X=" + x + ", Y=" + y);
     }
 
@@ -104,14 +109,13 @@ public class Client extends Thread {
             return;
         }
         NotifyWaiter notifyWaiter = NotifyWaiter.getInstance();
-        System.out.println("llamando al mesero");
-
-        notifyWaiter.notifyWaiter(new Pending(this,cordenads));
+        System.out.println("Cliente notificando al mesero...");
+        notifyWaiter.notifyWaiter(new Pending(this, cordenads));
     }
 
     public synchronized void attend() {
         this.isAttending = true;
         System.out.println("Cliente siendo atendido...");
-        notify(); // Notificar al cliente que ha sido atendido
+        notify(); // Notifica al cliente que ha sido atendido
     }
 }
