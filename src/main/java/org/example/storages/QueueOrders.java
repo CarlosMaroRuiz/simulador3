@@ -4,18 +4,24 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class QueueOrders {
+    
     private final BlockingQueue<Pending> orders;
+    
     private static QueueOrders instance;
 
     private QueueOrders() {
+        
         this.orders = new LinkedBlockingQueue<>(); // Manejo automático de concurrencia
+
     }
 
     public static QueueOrders getInstance() {
         if (instance == null) {
             synchronized (QueueOrders.class) {
                 if (instance == null) {
+                    
                     instance = new QueueOrders();
+                    
                 }
             }
         }
