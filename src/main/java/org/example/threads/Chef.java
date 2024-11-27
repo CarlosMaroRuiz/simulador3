@@ -38,8 +38,11 @@ public class Chef extends Thread {
                     System.out.println("No hay pedidos asignados para cocinar.");
                 }
             } catch (InterruptedException e) {
+                
                 System.out.println("Chef interrumpido.");
+                
                 Thread.currentThread().interrupt();
+                
             }
         }
     }
@@ -49,9 +52,11 @@ public class Chef extends Thread {
 
         // Extraer pedido bloqueante si la cola está vacía
         pendingCook = queueOrders.desencolar();
-
+        
         if (pendingCook != null) {
+            
             System.out.println("Pedido recibido: Cliente ID=" + pendingCook.getClient().getId());
+            
         }
     }
 
