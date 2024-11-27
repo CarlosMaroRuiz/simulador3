@@ -5,6 +5,7 @@ import com.almasb.fxgl.app.GameSettings;
 import org.example.settings.InitSettings;
 import org.example.settings.SettingsGame;
 
+
 /*
    Cosas a recordar
     FXGL.entityBuilder() -->metodo que nos ayuda con la construcion de entidades
@@ -17,11 +18,13 @@ import org.example.settings.SettingsGame;
 ----------------------------------------------------------------------------------------
  */
 
+
 /*
 Colisiones de rango en lo borde
 x= 80 -- 700
 y= 60 -- 490
  */
+
 public class Main extends GameApplication {
 
     @Override
