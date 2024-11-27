@@ -8,7 +8,8 @@ public class MoveCordinated {
         double currentX = childComponent.getEntity().getX();
         double currentY = childComponent.getEntity().getY();
         double speed = 100;
-
+        
+        //move the entity component
         while (Math.abs(currentX - targetX) > 1 || Math.abs(currentY - targetY) > 1) {
             double deltaX = targetX - currentX;
             double deltaY = targetY - currentY;
