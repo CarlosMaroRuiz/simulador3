@@ -2,6 +2,7 @@ package org.example.observers;
 
 import org.example.factories.GeneratorClient;
 
+
 public class NotifyGenerator {
     private GeneratorClient generatorClient;
 
